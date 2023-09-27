@@ -14,6 +14,10 @@ public class LoaiSach implements Serializable {
         this.tenLoaiSach = tenLoaiSach;
     }
 
+    public LoaiSach(String tenLoaiSach) {
+        this.tenLoaiSach = tenLoaiSach;
+    }
+
     public int getMaLoaiSach() {
         return maLoaiSach;
     }

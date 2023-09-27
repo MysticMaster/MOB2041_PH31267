@@ -17,6 +17,12 @@ public class Sach implements Serializable {
         this.maLoaiSach = maLoaiSach;
     }
 
+    public Sach(String tenSach, int giaMuon, int maLoaiSach) {
+        this.tenSach = tenSach;
+        this.giaMuon = giaMuon;
+        this.maLoaiSach = maLoaiSach;
+    }
+
     public int getMaSach() {
         return maSach;
     }

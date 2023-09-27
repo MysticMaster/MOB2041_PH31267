@@ -11,7 +11,7 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final String DbName = "PhuongNamLibrary";
 
     public DbHelper(@Nullable Context context) {
-        super(context, DbName, null, 2);
+        super(context, DbName, null, 6);
     }
 
     @Override
@@ -28,7 +28,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "tenSach TEXT NOT NULL," +
                 "giaMuon INTEGEER NOT NULL," +
                 "maLoaiSach INTEGER," +
-                "FOREIGN KEY (maLoaiSach) REFERENCES LoaiSach (maLoaiSach));";
+                "FOREIGN KEY (maLoaiSach) REFERENCES LoaiSach (maLoaiSach) ON DELETE SET NULL);";
         db.execSQL(createSach);
 
         // tạo bảng thủ thư ------------------------------------
@@ -42,11 +42,13 @@ public class DbHelper extends SQLiteOpenHelper {
                 "phanQuyen INTEGER NOT NULL);";
         db.execSQL(createThuThu);
 
+        db.execSQL("INSERT INTO ThuThu VALUES(" +
+                "'ADMIN','Đinh','Ngọc Anh','ADMINISTRATOR','123456789',1,0);");
+
         // tạo bảng thành viên -----------------------------------
         String createThanhVien = "CREATE TABLE ThanhVien(" +
                 "maThanhVien INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "tenThanhVien TEXT NOT NULL," +
-                "hoThanhVien TEXT NOT NULL," +
+                "hoTenThanhVien TEXT NOT NULL," +
                 "namSinh INTEGER);";
         db.execSQL(createThanhVien);
 
@@ -54,12 +56,13 @@ public class DbHelper extends SQLiteOpenHelper {
         String createPhieuMuon = "CREATE TABLE PhieuMuon(" +
                 "maPhieuMuon INTEGER PRIMARY KEY," +
                 "trangThaiPhieuMuon INTEGER NOT NULL," +
-                "ngayMuon TEXT NOT NULL," +
+                "giaMuon INTEGER," +
+                "ngayMuon DATE NOT NULL," +
                 "maThanhVien INTEGER," +
                 "maSach INTEGER," +
                 "maThuThu TEXT," +
-                "FOREIGN KEY (maThanhVien) REFERENCES ThanhVien (maThanhVien)," +
-                "FOREIGN KEY (maSach) REFERENCES Sach (maSach)," +
+                "FOREIGN KEY (maThanhVien) REFERENCES ThanhVien (maThanhVien) ON DELETE SET NULL," +
+                "FOREIGN KEY (maSach) REFERENCES Sach (maSach) ON DELETE SET NULL," +
                 "FOREIGN KEY (maThuThu) REFERENCES ThuThu (maThuThu));";
         db.execSQL(createPhieuMuon);
     }

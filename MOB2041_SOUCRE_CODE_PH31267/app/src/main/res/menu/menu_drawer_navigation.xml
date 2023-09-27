@@ -45,7 +45,8 @@
                 <item
                     android:id="@+id/ql_thu_thu"
                     android:icon="@drawable/ql_thu_thu"
-                    android:title="Quản lý thủ thư" />
+                    android:title="Quản lý thủ thư"
+                    android:visible="false" />
 
                 <item
                     android:id="@+id/doi_mat_khau"

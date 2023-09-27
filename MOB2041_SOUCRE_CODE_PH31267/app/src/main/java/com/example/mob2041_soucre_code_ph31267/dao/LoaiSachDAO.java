@@ -10,21 +10,19 @@ import android.util.Log;
 
 import com.example.mob2041_soucre_code_ph31267.database.DbHelper;
 import com.example.mob2041_soucre_code_ph31267.model.LoaiSach;
-import com.example.mob2041_soucre_code_ph31267.model.Sach;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DAO {
+public class LoaiSachDAO {
     private final DbHelper dbHelper;
     private Context context;
 
-    public DAO(Context context) {
+    public LoaiSachDAO(Context context) {
         dbHelper = new DbHelper(context);
         this.context = context;
     }
 
-    // Loại sách -------------------------------------
     public List<LoaiSach> selectAllLoaiSach() {
         SQLiteDatabase database = dbHelper.getReadableDatabase();
         List<LoaiSach> loaiSachList = new ArrayList<>();
@@ -75,11 +73,4 @@ public class DAO {
                 new String[]{String.valueOf(loaiSach.getMaLoaiSach())});
         return row != -1;
     }
-
-    // Sach --------------------------------------------------------------
-//    public List<Sach> selectAllSach(){
-//        SQLiteDatabase database = dbHelper.getReadableDatabase();
-//        List<Sach> sachList = new ArrayList<>();
-//    }
-
 }

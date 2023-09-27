@@ -4,16 +4,20 @@ import java.io.Serializable;
 
 public class ThanhVien implements Serializable {
     private int maThanhVien;
-    private String tenThanhVien, hoThanhVien;
+    private String hoTenThanhVien;
     private int namSinh;
 
     public ThanhVien() {
     }
 
-    public ThanhVien(int maThanhVien, String tenThanhVien, String hoThanhVien, int namSinh) {
+    public ThanhVien(int maThanhVien, String hoTenThanhVien, int namSinh) {
         this.maThanhVien = maThanhVien;
-        this.tenThanhVien = tenThanhVien;
-        this.hoThanhVien = hoThanhVien;
+        this.hoTenThanhVien = hoTenThanhVien;
+        this.namSinh = namSinh;
+    }
+
+    public ThanhVien(String hoTenThanhVien, int namSinh) {
+        this.hoTenThanhVien = hoTenThanhVien;
         this.namSinh = namSinh;
     }
 
@@ -26,21 +30,12 @@ public class ThanhVien implements Serializable {
         return this;
     }
 
-    public String getTenThanhVien() {
-        return tenThanhVien;
+    public String getHoTenThanhVien() {
+        return hoTenThanhVien;
     }
 
-    public ThanhVien setTenThanhVien(String tenThanhVien) {
-        this.tenThanhVien = tenThanhVien;
-        return this;
-    }
-
-    public String getHoThanhVien() {
-        return hoThanhVien;
-    }
-
-    public ThanhVien setHoThanhVien(String hoThanhVien) {
-        this.hoThanhVien = hoThanhVien;
+    public ThanhVien setHoTenThanhVien(String hoTenThanhVien) {
+        this.hoTenThanhVien = hoTenThanhVien;
         return this;
     }
 

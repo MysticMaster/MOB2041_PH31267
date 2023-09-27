@@ -9,6 +9,23 @@ public class ThuThu implements Serializable {
     public ThuThu() {
     }
 
+    public ThuThu(String maThuThu, String hoThuThu, String tenThuThu, String tenDangNhap, String matKhau, int trangThaiThuThu, int phanQuyen) {
+        this.maThuThu = maThuThu;
+        this.hoThuThu = hoThuThu;
+        this.tenThuThu = tenThuThu;
+        this.tenDangNhap = tenDangNhap;
+        this.matKhau = matKhau;
+        this.trangThaiThuThu = trangThaiThuThu;
+        this.phanQuyen = phanQuyen;
+    }
+
+    public ThuThu(String maThuThu, String hoThuThu, String tenThuThu, int trangThaiThuThu) {
+        this.maThuThu = maThuThu;
+        this.hoThuThu = hoThuThu;
+        this.tenThuThu = tenThuThu;
+        this.trangThaiThuThu = trangThaiThuThu;
+    }
+
     public String getMaThuThu() {
         return maThuThu;
     }

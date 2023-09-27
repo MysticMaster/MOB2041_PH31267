@@ -3,7 +3,7 @@ package com.example.mob2041_soucre_code_ph31267.model;
 import java.io.Serializable;
 
 public class PhieuMuon implements Serializable {
-    private int maPhieuMuon, trangThaiPhieuMuon;
+    private int maPhieuMuon, trangThaiPhieuMuon, giaMuon;
     private String ngayMuon;
     private int maThanhVien, maSach;
     private String maThuThu;
@@ -11,9 +11,19 @@ public class PhieuMuon implements Serializable {
     public PhieuMuon() {
     }
 
-    public PhieuMuon(int maPhieuMuon, int trangThaiPhieuMuon, String ngayMuon, int maThanhVien, int maSach, String maThuThu) {
+    public PhieuMuon(int maPhieuMuon, int trangThaiPhieuMuon, int giaMuon, String ngayMuon, int maThanhVien, int maSach, String maThuThu) {
         this.maPhieuMuon = maPhieuMuon;
         this.trangThaiPhieuMuon = trangThaiPhieuMuon;
+        this.giaMuon = giaMuon;
+        this.ngayMuon = ngayMuon;
+        this.maThanhVien = maThanhVien;
+        this.maSach = maSach;
+        this.maThuThu = maThuThu;
+    }
+
+    public PhieuMuon(int trangThaiPhieuMuon, int giaMuon, String ngayMuon, int maThanhVien, int maSach, String maThuThu) {
+        this.trangThaiPhieuMuon = trangThaiPhieuMuon;
+        this.giaMuon = giaMuon;
         this.ngayMuon = ngayMuon;
         this.maThanhVien = maThanhVien;
         this.maSach = maSach;
@@ -62,6 +72,15 @@ public class PhieuMuon implements Serializable {
 
     public PhieuMuon setMaSach(int maSach) {
         this.maSach = maSach;
+        return this;
+    }
+
+    public int getGiaMuon() {
+        return giaMuon;
+    }
+
+    public PhieuMuon setGiaMuon(int giaMuon) {
+        this.giaMuon = giaMuon;
         return this;
     }
 
