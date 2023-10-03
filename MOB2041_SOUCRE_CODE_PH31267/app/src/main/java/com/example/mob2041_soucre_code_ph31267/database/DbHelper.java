@@ -11,7 +11,7 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final String DbName = "PhuongNamLibrary";
 
     public DbHelper(@Nullable Context context) {
-        super(context, DbName, null, 6);
+        super(context, DbName, null, 1);
     }
 
     @Override
@@ -22,6 +22,12 @@ public class DbHelper extends SQLiteOpenHelper {
                 "tenLoaiSach TEXT NOT NULL );";
         db.execSQL(createLoaiSach);
 
+        db.execSQL("INSERT INTO LoaiSach VALUES" +
+                "(1,'Văn học')," +
+                "(2,'Kinh tế')," +
+                "(3,'Ngoại ngữ')," +
+                "(4,'Công nghệ thông tin');");
+
         // tạo bảng sách -----------------------------------
         String createSach = "CREATE TABLE Sach(" +
                 "maSach INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -30,6 +36,13 @@ public class DbHelper extends SQLiteOpenHelper {
                 "maLoaiSach INTEGER," +
                 "FOREIGN KEY (maLoaiSach) REFERENCES LoaiSach (maLoaiSach) ON DELETE SET NULL);";
         db.execSQL(createSach);
+
+        db.execSQL("INSERT INTO Sach VALUES" +
+                "(1,'Số đỏ',12000,1)," +
+                "(2,'Lập trình JAVA cơ bản',33000,4)," +
+                "(3,'360 động từ bất quy tắc',21000,3)," +
+                "(4,'Phi lý trí',25000,2)," +
+                "(5,'Clean code',23000,4);");
 
         // tạo bảng thủ thư ------------------------------------
         String createThuThu = "CREATE TABLE ThuThu(" +
@@ -42,8 +55,10 @@ public class DbHelper extends SQLiteOpenHelper {
                 "phanQuyen INTEGER NOT NULL);";
         db.execSQL(createThuThu);
 
-        db.execSQL("INSERT INTO ThuThu VALUES(" +
-                "'ADMIN','Đinh','Ngọc Anh','ADMINISTRATOR','123456789',1,0);");
+        db.execSQL("INSERT INTO ThuThu VALUES" +
+                "('ADMIN','Đinh','Ngọc Anh','ADMINISTRATOR','123456789',1,0)," +
+                "('THUTHU1','Cao','Minh Thành','THANHTT01','123456789',1,1)," +
+                "('THUTHU2','Nguyễn','Tuấn An','ANTT02','123456789',1,1);");
 
         // tạo bảng thành viên -----------------------------------
         String createThanhVien = "CREATE TABLE ThanhVien(" +
@@ -51,6 +66,13 @@ public class DbHelper extends SQLiteOpenHelper {
                 "hoTenThanhVien TEXT NOT NULL," +
                 "namSinh INTEGER);";
         db.execSQL(createThanhVien);
+
+        db.execSQL("INSERT INTO ThanhVien VALUES" +
+                "(1,'Nông Văn Anh', 1999)," +
+                "(2,'Lý Thượng Sách', 2003)," +
+                "(3,'Thủy Kính', 1998)," +
+                "(4,'Thủy Thượng Phiêu', 2002)," +
+                "(5,'Tịnh Thổ Nhất Tâm', 1998);");
 
         // tạo bảng phiếu mượn ------------------------------------
         String createPhieuMuon = "CREATE TABLE PhieuMuon(" +
@@ -65,6 +87,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "FOREIGN KEY (maSach) REFERENCES Sach (maSach) ON DELETE SET NULL," +
                 "FOREIGN KEY (maThuThu) REFERENCES ThuThu (maThuThu));";
         db.execSQL(createPhieuMuon);
+
     }
 
     @Override

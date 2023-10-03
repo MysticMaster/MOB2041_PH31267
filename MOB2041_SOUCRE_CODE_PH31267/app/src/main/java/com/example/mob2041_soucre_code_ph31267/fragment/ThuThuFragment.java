@@ -38,13 +38,8 @@ public class ThuThuFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_thu_thu, container, false);
         thuThuDAO = new ThuThuDAO(getContext());
-        thuThuList = new ArrayList<>();
-        List<ThuThu> list = thuThuDAO.selectAllThuThu();
-        for (ThuThu thuThu : list) {
-            if (thuThu.getPhanQuyen() == 1) {
-                thuThuList.add(thuThu);
-            }
-        }
+        thuThuList = thuThuDAO.selectAllThuThu();
+
         thuThuAdapter = new ThuThuAdapter(getContext(), thuThuList, thuThuDAO);
         RecyclerView recyclerThuThu = view.findViewById(R.id.recyclerThuThu);
         FloatingActionButton floatBtnAddThuThu = view.findViewById(R.id.floatBtnAddThuThu);

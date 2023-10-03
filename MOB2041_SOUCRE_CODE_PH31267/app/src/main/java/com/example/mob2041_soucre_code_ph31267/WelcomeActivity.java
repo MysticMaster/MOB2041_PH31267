@@ -15,9 +15,6 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        ThuThuDAO thuThuDAO = new ThuThuDAO(WelcomeActivity.this);
-
-
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override

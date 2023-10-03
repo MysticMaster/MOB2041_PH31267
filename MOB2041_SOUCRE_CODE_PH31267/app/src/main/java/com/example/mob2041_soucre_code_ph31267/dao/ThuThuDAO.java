@@ -30,7 +30,7 @@ public class ThuThuDAO {
         try {
             Cursor cursor = database.rawQuery(
                     "SELECT ThuThu.maThuThu, ThuThu.hoThuThu, ThuThu.tenThuThu," +
-                            " ThuThu.trangThaiThuThu  FROM ThuThu", null);
+                            " ThuThu.trangThaiThuThu  FROM ThuThu WHERE phanQuyen =1", null);
 
             if (cursor.getCount() > 0) {
                 cursor.moveToFirst();

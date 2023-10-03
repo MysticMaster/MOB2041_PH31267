@@ -69,14 +69,14 @@ public class PhieuMuonFragment extends Fragment {
         floatBtnAddPhieuMuon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openDialogUpdatePhieuMuon(sachDAO);
+                openDialogAddPhieuMuon(sachDAO);
             }
         });
 
         return view;
     }
 
-    private void openDialogUpdatePhieuMuon(SachDAO sachDAO) {
+    private void openDialogAddPhieuMuon(SachDAO sachDAO) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.item_add_phieu_muon, null);

@@ -59,7 +59,7 @@ public class SachAdapter extends RecyclerView.Adapter<SachAdapter.ViewHolder> {
         holder.txtMaSach.setText("Mã sách: " + sach.getMaSach());
         holder.txtTenSach.setText("Tên sách: " + sach.getTenSach());
         holder.txtTenLoaiSach_Sach.setText("Loại sách: " + sachDAO.getTenLoaiSach(sach.getMaLoaiSach()));
-        holder.txtGiaMuon.setText("Giá mượn:" + sach.getGiaMuon());
+        holder.txtGiaMuon.setText("Giá mượn: " + sach.getGiaMuon());
 
         holder.iBtnOpenSach.setOnClickListener(new View.OnClickListener() {
             @Override

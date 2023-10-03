@@ -43,7 +43,7 @@ public class ThongKeDAO {
         SQLiteDatabase database = dbHelper.getReadableDatabase();
         List<Integer> list = new ArrayList<>();
 
-        String query = "SELECT SUM(giaMuon) AS doanhThu FROM PhieuMuon WHERE ngayMuon BETWEEN ? AND ? ";
+        String query = "SELECT SUM(giaMuon) AS doanhThu FROM PhieuMuon WHERE ngayMuon BETWEEN ? AND ? AND trangThaiPhieuMuon = 1 ";
 
         Cursor cursor = database.rawQuery(query, new String[]{fromDay, toDay});
 
