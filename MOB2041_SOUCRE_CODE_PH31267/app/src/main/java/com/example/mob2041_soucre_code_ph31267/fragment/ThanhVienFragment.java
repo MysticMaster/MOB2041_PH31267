@@ -74,11 +74,11 @@ public class ThanhVienFragment extends Fragment {
         txtAddThanhVienSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (edtAddHoTenThanhVien.getText().toString().isEmpty() | edtAddHoTenThanhVien.getText().toString().equals("")) {
+                if (edtAddHoTenThanhVien.getText().toString().trim().isEmpty()) {
                     Toast.makeText(getContext(), "Vui lòng nhập họ và tên thành viên", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (edtAddNamSinh.getText().toString().trim().isEmpty() | edtAddNamSinh.getText().toString().trim().equals("")) {
+                if (edtAddNamSinh.getText().toString().trim().trim().isEmpty()) {
                     Toast.makeText(getContext(), "Vui lòng nhập năm sinh", Toast.LENGTH_SHORT).show();
                     return;
                 }

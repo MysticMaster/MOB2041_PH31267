@@ -11,7 +11,7 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final String DbName = "PhuongNamLibrary";
 
     public DbHelper(@Nullable Context context) {
-        super(context, DbName, null, 1);
+        super(context, DbName, null, 2);
     }
 
     @Override
@@ -32,7 +32,7 @@ public class DbHelper extends SQLiteOpenHelper {
         String createSach = "CREATE TABLE Sach(" +
                 "maSach INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "tenSach TEXT NOT NULL," +
-                "giaMuon INTEGEER NOT NULL," +
+                "giaMuon INTEGER NOT NULL," +
                 "maLoaiSach INTEGER," +
                 "FOREIGN KEY (maLoaiSach) REFERENCES LoaiSach (maLoaiSach) ON DELETE SET NULL);";
         db.execSQL(createSach);

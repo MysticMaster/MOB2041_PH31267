@@ -173,11 +173,11 @@ public class SachAdapter extends RecyclerView.Adapter<SachAdapter.ViewHolder> {
         txtUpdateSachSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (edtUpdateTenSach.getText().toString().isEmpty() | edtUpdateTenSach.getText().toString().equals("")) {
+                if (edtUpdateTenSach.getText().toString().trim().isEmpty()) {
                     Toast.makeText(context, "Vui lòng nhập tên sách", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (edtUpdateGiaMuon.getText().toString().isEmpty() | edtUpdateGiaMuon.getText().toString().equals("")) {
+                if (edtUpdateGiaMuon.getText().toString().trim().isEmpty()) {
                     Toast.makeText(context, "Vui lòng nhập giá mượn sách", Toast.LENGTH_SHORT).show();
                     return;
                 }

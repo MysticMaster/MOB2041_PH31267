@@ -85,11 +85,11 @@ public class SachFragment extends Fragment {
         txtAddSachSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (edtAddTenSach.getText().toString().isEmpty() | edtAddTenSach.getText().toString().equals("")) {
+                if (edtAddTenSach.getText().toString().trim().isEmpty()) {
                     Toast.makeText(getContext(), "Vui lòng nhập tên sách", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (edtAddGiaMuon.getText().toString().isEmpty() | edtAddGiaMuon.getText().toString().equals("")) {
+                if (edtAddGiaMuon.getText().toString().trim().isEmpty()) {
                     Toast.makeText(getContext(), "Vui lòng nhập giá mượn sách", Toast.LENGTH_SHORT).show();
                     return;
                 }

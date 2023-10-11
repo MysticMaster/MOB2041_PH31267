@@ -160,11 +160,11 @@ public class ThanhVienAdapter extends RecyclerView.Adapter<ThanhVienAdapter.View
         txtUpdateThanhVienSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (edtUpdateHoTenThanhVien.getText().toString().isEmpty() | edtUpdateHoTenThanhVien.getText().toString().equals("")) {
+                if (edtUpdateHoTenThanhVien.getText().toString().trim().isEmpty()) {
                     Toast.makeText(context, "Vui lòng nhập họ tên thành viên", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (edtUpdateNamSinh.getText().toString().isEmpty() | edtUpdateNamSinh.getText().toString().equals("")) {
+                if (edtUpdateNamSinh.getText().toString().trim().isEmpty()) {
                     Toast.makeText(context, "Vui lòng nhập năm sinh", Toast.LENGTH_SHORT).show();
                     return;
                 }

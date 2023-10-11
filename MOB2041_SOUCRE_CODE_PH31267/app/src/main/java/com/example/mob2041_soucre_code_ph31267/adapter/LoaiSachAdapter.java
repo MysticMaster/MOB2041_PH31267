@@ -155,7 +155,7 @@ public class LoaiSachAdapter extends RecyclerView.Adapter<LoaiSachAdapter.ViewHo
         txtUpdateLoaiSachSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (edtUpdateTenLoaiSach.getText().toString().isEmpty() | edtUpdateTenLoaiSach.getText().toString().equals("")) {
+                if (edtUpdateTenLoaiSach.getText().toString().trim().isEmpty()) {
                     Toast.makeText(context, "Vui lòng nhập tên loại sách", Toast.LENGTH_SHORT).show();
                     return;
                 }

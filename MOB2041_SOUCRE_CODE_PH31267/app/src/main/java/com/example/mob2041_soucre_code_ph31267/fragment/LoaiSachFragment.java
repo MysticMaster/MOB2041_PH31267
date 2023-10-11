@@ -70,7 +70,7 @@ public class LoaiSachFragment extends Fragment {
         txtAddLoaiSachSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (edtAddTenLoaiSach.getText().toString().isEmpty() | edtAddTenLoaiSach.getText().toString().equals("")) {
+                if (edtAddTenLoaiSach.getText().toString().trim().isEmpty()) {
                     Toast.makeText(getContext(), "Vui lòng nhập tên loại sách", Toast.LENGTH_SHORT).show();
                     return;
                 }

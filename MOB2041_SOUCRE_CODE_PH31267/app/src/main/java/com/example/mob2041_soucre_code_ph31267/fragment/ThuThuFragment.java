@@ -78,23 +78,23 @@ public class ThuThuFragment extends Fragment {
         txtAddThuThuSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (edtAddMaThuThu.getText().toString().isEmpty() | edtAddMaThuThu.getText().toString().equals("")) {
+                if (edtAddMaThuThu.getText().toString().trim().isEmpty()) {
                     Toast.makeText(getContext(), "Vui lòng nhập mã thủ thư", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (edtAddHoThuThu.getText().toString().isEmpty() | edtAddHoThuThu.getText().toString().equals("")) {
+                if (edtAddHoThuThu.getText().toString().trim().isEmpty()) {
                     Toast.makeText(getContext(), "Vui lòng nhập họ thủ thư", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (edtAddTenThuThu.getText().toString().isEmpty() | edtAddTenThuThu.getText().toString().equals("")) {
+                if (edtAddTenThuThu.getText().toString().trim().isEmpty()) {
                     Toast.makeText(getContext(), "Vui lòng nhập tên thủ thư", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (edtAddTenDangNhap.getText().toString().isEmpty() | edtAddTenDangNhap.getText().toString().equals("")) {
+                if (edtAddTenDangNhap.getText().toString().trim().isEmpty()) {
                     Toast.makeText(getContext(), "Vui lòng nhập tên đăng nhập", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (edtAddMatKhau.getText().toString().trim().isEmpty() | edtAddMatKhau.getText().toString().trim().equals("")) {
+                if (edtAddMatKhau.getText().toString().trim().isEmpty()) {
                     Toast.makeText(getContext(), "Vui lòng nhập mật khẩu", Toast.LENGTH_SHORT).show();
                     return;
                 }
